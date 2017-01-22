@@ -1,0 +1,250 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
+    defaultConfig {
+        applicationId "org.chromium.content_shell.chromium6"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+
+        aaptOptions {
+            noCompress 'icudtl.dat', 'snapshot_blob_32.bin', 'natives_blob.bin', "content_shell.pak", "crazy.libchromium_android_linker.so", "libcontent_shell_content_view.so"
+
+        }
+
+        ndk {
+
+
+            abiFilters "armeabi-v7a"
+            //, "armeabi"
+        }
+
+        externalNativeBuild {
+            cmake {
+                cppFlags "-std=c++11"
+            }
+        }
+
+
+    }
+    sourceSets {
+
+        //annotations
+        main.java.srcDirs += '/home/c/Pictures/src/base/android/java/src/'
+
+        main.java.srcDirs += 'home/c/Pictures/src/content/public/android/java/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/content/public/android/java/src/'
+        //org/chromium/content/R.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/content/public/android/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/ui/android/java/src/'
+        //UrlUtils.java
+        main.java.srcDirs += '/home/c/Pictures/src/base/test/android/javatests/src/'
+
+        //gamepad
+        main.java.srcDirs += '/home/c/Pictures/src/device/gamepad/android/java/src/'
+
+        //textinputtype.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/ui/android/'
+
+        //webinputeventmodifier
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/third_party/WebKit/public/WebInputEvent/'
+
+        //touchselection
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/ui/touch_selection/'
+
+        //loadurltype
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/content/public/android/LoadURLType/'
+
+        //libraryprocesstype
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/base/'
+
+        //contentshell //shell.java
+        main.java.srcDirs += '/home/c/Pictures/src/content/shell/android/java/src/'
+
+        //RectF.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/ui/gfx/geometry/mojo/'
+
+        //MojoException.java
+        main.java.srcDirs += '/home/c/Pictures/src/mojo/public/java/system/src/'
+
+        //FaceDetection.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/services/shape_detection/public/interfaces/'
+
+        //DeserializationException.java
+        main.java.srcDirs += '/home/c/Pictures/src/mojo/public/java/bindings/src/'
+
+        //QueryVersion.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/mojo/public/interfaces/bindings/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/services/service_manager/public/java/src/'
+
+        //facedetectionprovider.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/services/shape_detection/public/interfaces/'
+
+        //AXTextStyle
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/ui/accessibility/'
+
+        //networkchangenotifier
+        main.java.srcDirs += '/home/c/Pictures/src/net/android/java/src/'
+
+        //Connectiontype
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/net/android/'
+        //batterymonitor
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/device/battery/'
+
+        //batterymanager
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/device/vibration/'
+
+        //batterymonitorfactory
+        main.java.srcDirs += '/home/c/Pictures/src/device/battery/android/java/src/'
+        //org/chromium/device/battery/BatteryMonitorFactory.java'
+
+        //nfc.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/device/nfc/'
+
+        //VirbrationManagerImpl
+        main.java.srcDirs += '/home/c/Pictures/src/device/vibration/android/java/src/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/mojo/android/system/src/'
+        ///org/chromium/mojo/system/impl/CoreImpl.java
+
+        //interfaceprovider
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/services/service_manager/public/interfaces/'
+
+        //nfcimp.java
+        main.java.srcDirs += '/home/c/Pictures/src/device/nfc/android/java/src/'
+        //org/chromium/device/nfc/NfcImpl.java
+
+        //R.java ui
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/ui/android/rjavaui/'
+
+        //teststatuslistener
+        main.java.srcDirs += '/home/c/Pictures/src/testing/android/reporter/java/src/'
+        //org/chromium/test/reporter/TestStatusListener.java
+
+        //frameworkmethod
+        main.java.srcDirs += '/home/c/Pictures/src/third_party/junit/src/src/main/java/'
+
+        //batterystatus.java
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/device/battery/batterystatus/'
+
+        //scrollDirection
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/content/browser/accessibility/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/device/gamepad/org/'
+
+        //hamcrest
+        main.java.srcDirs += 'home/c/Pictures/src/out/gradle/lib.java/third_party/hamcrest/hamcrest-core-1.3/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/third_party/findbugs/lib/jsr305/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/base/base_native_libraries_gen/java_cpp_template/'
+
+        //ChromeBlueToothAdapter
+        main.java.srcDirs += '/home/c/Pictures/src/device/bluetooth/android/java/src/org/chromium/device/bluetooth/ChromeBluetoothAdapter.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/components/location/android/java/src/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/device/bluetooth/android/java/src/org/chromium/device/bluetooth/Wrappers.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/device/bluetooth/android/java/src/'
+
+        //ChromeBlueToothDevice
+        main.java.srcDirs += '/home/c/Pictures/src/device/bluetooth/android/java/src/org/chromium/device/bluetooth/ChromeBluetoothDevice.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/device/geolocation/android/java/org/chromium/device/geolocation/LocationProviderAdapter.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/device/geolocation/android/java/org/chromium/device/geolocation/LocationProviderFactory.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/device/generic_sensor/android/java/src/org/chromium/device/sensors/PlatformSensor.java'
+
+
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/device/generic_sensor/public/interfaces/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/device/generic_sensor/android/java/src/org/chromium/device/sensors/PlatformSensorProvider.java'
+
+        //TimeZoneMonitor.java
+        main.java.srcDirs += '/home/c/Pictures/src/device/time_zone_monitor/android/java/src/org/chromium/device/time_zone_monitor/TimeZoneMonitor.java'
+
+        //ChromeUsbService
+        main.java.srcDirs += '/home/c/Pictures/src/device/usb/android/java/src/org/chromium/device/usb/ChromeUsbService.java'
+
+        //ChromeUsbDevice.java
+        main.java.srcDirs += '/home/c/Pictures/src/device/usb/android/java/src/org/chromium/device/usb/'
+
+        //import Chromeusbdevice
+        main.java.srcDirs += '/home/c/Pictures/src/device/usb/android/java/src/Chromeusbdevice.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/media/base/android/java/src/org/chromium/media/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/media/capture/video/android/java/src/org/chromium/media/VideoCapture.java'
+
+        // main.java.srcDirs += '/home/c/Pictures/src/media/capture/video/android/java/src/org/chromium/media/VideoCaptureFormat.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/media/capture/video/android/java/src/org/chromium/media/VideoCaptureFormat.java'
+
+        //photo capabilities
+        main.java.srcDirs += '/home/c/Pictures/src/media/capture/video/android/java/src/org/chromium/media/PhotoCapabilities.java'
+
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/media/capture/video/android/org/chromium/media/'
+
+        //screencapture.java
+        main.java.srcDirs += '/home/c/Pictures/src/media/capture/content/android/java/src/org/chromium/media/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/media/midi/java/src/org/chromium/midi/'
+
+        //dont understand why facedetectionprovider is loaded correctly though java. It is in FaceDetectionProviderFactory.java
+        //it still finds things in org (2) folers
+
+        //instrumentationregistry.java
+        //  main.java.srcDirs += '/home/c/Android/Sdk/sources/android-21/'
+
+        //    main.java.srcDirs += '/home/c/Android/Sdk/sources/android-21/android/support/'
+
+        main.java.srcDirs += '/home/c/Pictures/src/out/gradle/gen/media/capture/video/android/'
+
+        // PowerSaveBlocker.java
+        main.java.srcDirs += '/home/c/Pictures/src/device/power_save_blocker/android/java/src/org/chromium/device/power_save_blocker/PowerSaveBlocker.java'
+    }
+
+    // configurations.all {
+    //    resolutionStrategy {
+    //       force 'com.android.support:support-annotations:25.1.0'
+    //   }
+    //  }
+
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    compile 'com.android.support:design:25.1.0'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/jsr305.jar')
+    compile 'com.android.support:multidex:1.0.1'
+    //testCompile 'com.android.support.test:runner:0.5'
+    //  androidTestCompile 'com.android.support.test:runner:0.4.1'
+    //  androidTestCompile 'com.android.support.test:rules:0.4.1'
+    //  compile 'com.android.support:support-annotations:22.2.0'
+    //testCompile 'com.android.support:support-annotations:22.1.1'
+    compile files('libs/hamcrest-library-1.3.jar')
+    compile files('libs/hamcrest-core-1.3.jar')
+    compile 'com.android.support:appcompat-v7:25.1.0'
+}
